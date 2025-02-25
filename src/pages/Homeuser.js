@@ -85,8 +85,6 @@ function Home() {
       <nav style={styles.nav}>
         <Link to="/products" style={styles.link}>View Products</Link> | 
         <Link to="/orders" style={styles.link}>My Orders</Link> | 
-        <Link to="/login" style={styles.link}>Login</Link> | 
-        <Link to="/register" style={styles.link}>Register</Link>
       </nav>
     </div>
   );

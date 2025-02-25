@@ -24,7 +24,7 @@ const Login = () => {
             const data = await response.json();
             if (response.ok) {
                 login(data.token);
-                navigate("/"); // กลับไปหน้า Home
+                navigate("/Homeuser"); // ✅ เปลี่ยนเส้นทางไปหน้า HomeUser
             } else {
                 setError(data.message);
             }
@@ -65,7 +65,6 @@ const Login = () => {
                 <button type="submit" className="btn btn-primary w-100">Login</button>
             </form>
         </div>
-
     );
 };
 
