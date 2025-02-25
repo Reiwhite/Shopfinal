@@ -5,6 +5,7 @@ import Products from "./pages/Products";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Orders from "./pages/Orders";
+import Homeuser from "./pages/Homeuser";
 import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -68,6 +69,7 @@ function App() {
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/Homeuser" element={<Homeuser />} />
             </Routes>
         </div>
     );
