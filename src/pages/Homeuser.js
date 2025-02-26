@@ -1,48 +1,107 @@
+// src/pages/Homeuser.js
 import React from "react";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css"; // นำเข้า CSS ของ Bootstrap
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // นำเข้า JS ของ Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import img1 from "../img/BL.jpg";
+import img2 from "../img/EV.jpg";
+import img3 from "../img/SK.jpg";
+import img4 from "../img/SL.jpg";
 
-function Home() {
+// Navbar Component
+const Usernav = () => {
+  const navbarStyle = {
+    position: "fixed", // ทำให้ Navbar คงที่อยู่ด้านบน
+    top: 0, // อยู่ที่ตำแหน่งบนสุด
+    left: 0, // ชิดขอบซ้าย
+    width: "100%", // ความกว้างเต็มหน้าจอ
+    zIndex: 1000, // ให้อยู่ด้านบนของเนื้อหาทั้งหมด
+    background: "linear-gradient(135deg, rgb(220, 95, 255), rgb(74, 129, 255))",
+    color: "#fff",
+  };
+
+  return (
+    <nav className="navbar navbar-expand-lg" style={navbarStyle}>
+      <div className="container-fluid">
+        <Link className="navbar-brand text-white" to="/">MyShop</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="/Homeuser">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="/orders">Orders</Link>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-danger">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+// Homeuser Component
+function Homeuser() {
   const styles = {
     container: {
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "start",
       textAlign: "center",
       background: "linear-gradient(135deg, rgb(0, 179, 255), rgb(165, 83, 252))",
       color: "#fff",
       fontFamily: "Arial, sans-serif",
-      padding: "20px",
-    },
-    nav: {
-      marginTop: "20px",
-    },
-    link: {
-      margin: "0 10px",
-      color: "#fff",
-      textDecoration: "none",
-      fontSize: "18px",
-      fontWeight: "bold",
+      paddingTop: "80px", // เพิ่มระยะห่างให้กับเนื้อหาด้านล่างของ Navbar
+      position: "relative",
     },
     carouselContainer: {
-      width: "80%", // กำหนดความกว้างของ Carousel
-      maxWidth: "800px",
-      borderRadius: "15px", // ทำให้มีมุมโค้งมน
+      width: "100%",
+      maxWidth: "1275px",
+      borderRadius: "15px",
       overflow: "hidden",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // เพิ่มเงาให้ดูสวยขึ้น
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      marginTop: "20px",
     },
     carouselImage: {
-      width: "100%", 
-      height: "400px", // ตั้งค่าความสูงให้เท่ากัน
-      objectFit: "cover", // ป้องกันภาพบิดเบี้ยว
+      width: "100%",
+      height: "400px",
+      objectFit: "cover",
+    },
+    cardContainer: {
+      display: "flex",
+      justifyContent: "space-between", // จัดการ์ดให้ห่างกัน
+      flexWrap: "wrap", // เมื่อหน้าจอเล็กลงก็จะแสดงเป็นแถวใหม่
+      marginTop: "40px",
+      gap: "20px", // เพิ่ม gap ระหว่างการ์ด
+    },
+    card: {
+      width: "18rem",
+      margin: "10px", // เพิ่มระยะห่างระหว่างการ์ด
+    },
+    cardBody: {
+      display: "flex",
+      justifyContent: "space-between", // จัดให้ปุ่มอยู่ด้านขวาสุด
+      alignItems: "center",
+    },
+    link: {
+      textDecoration: "none",
+      color: "#fff",
+      fontWeight: "bold",
     },
   };
 
   return (
     <div style={styles.container}>
+      {/* นำเข้า Usernav */}
+      <Usernav />
+
       {/* Bootstrap Carousel */}
       <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel" style={styles.carouselContainer}>
         <div className="carousel-inner">
@@ -82,12 +141,65 @@ function Home() {
       </div>
 
       {/* Navigation Links */}
-      <nav style={styles.nav}>
+      <nav className="mt-2">
         <Link to="/products" style={styles.link}>View Products</Link> | 
-        <Link to="/orders" style={styles.link}>My Orders</Link> | 
+        <Link to="/orders" style={styles.link}>My Orders</Link>
       </nav>
+      
+      {/* Card Section */}
+      <div style={styles.cardContainer}>
+        {/* Card 1 */}
+       
+        <div className="card" style={styles.card}>
+          <img src={img1} className="card-img-top" alt="Product 1" />
+          <div className="card-body" style={styles.cardBody}>
+            <div>
+              <h5 className="card-title">Blue Lock</h5>
+              <p className="card-text">Some quick example text to build on the card title.</p>
+            </div>
+            <button className="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+
+        {/* Card 2 */}
+        <div className="card" style={styles.card}>
+          <img src={img2} className="card-img-top" alt="Product 2" />
+          <div className="card-body" style={styles.cardBody}>
+            <div>
+              <h5 className="card-title">Product 2</h5>
+              <p className="card-text">Some quick example text to build on the card title.</p>
+            </div>
+            <button className="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+
+        {/* Card 3 */}
+        <div className="card" style={styles.card}>
+          <img src={img3} className="card-img-top" alt="Product 3" />
+          <div className="card-body" style={styles.cardBody}>
+            <div>
+              <h5 className="card-title">Product 3</h5>
+              <p className="card-text">Some quick example text to build on the card title.</p>
+            </div>
+            <button className="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+
+        {/* Card 4 */}
+        <div className="card" style={styles.card}>
+          <img src={img4} className="card-img-top" alt="Product 4" />
+          <div className="card-body" style={styles.cardBody}>
+            <div>
+              <h5 className="card-title">Product 4</h5>
+              <p className="card-text">Some quick example text to build on the card title.</p>
+            </div>
+            <button className="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
 
-export default Home;
+export default Homeuser;
