@@ -157,7 +157,7 @@ function Homeuser() {
               <h5 className="card-title">Blue Lock</h5>
               <p className="card-text">Some quick example text to build on the card title.</p>
             </div>
-            <button className="btn btn-primary">Go somewhere</button>
+            <button className="btn btn-primary">Add oder</button>
           </div>
         </div>
 
@@ -169,7 +169,7 @@ function Homeuser() {
               <h5 className="card-title">Product 2</h5>
               <p className="card-text">Some quick example text to build on the card title.</p>
             </div>
-            <button className="btn btn-primary">Go somewhere</button>
+            <button className="btn btn-primary">Add oder</button>
           </div>
         </div>
 
@@ -181,7 +181,7 @@ function Homeuser() {
               <h5 className="card-title">Product 3</h5>
               <p className="card-text">Some quick example text to build on the card title.</p>
             </div>
-            <button className="btn btn-primary">Go somewhere</button>
+            <button className="btn btn-primary">Add oder</button>
           </div>
         </div>
 
@@ -193,7 +193,7 @@ function Homeuser() {
               <h5 className="card-title">Product 4</h5>
               <p className="card-text">Some quick example text to build on the card title.</p>
             </div>
-            <button className="btn btn-primary">Go somewhere</button>
+            <button className="btn btn-primary">Add oder</button>
           </div>
         </div>
       </div>
