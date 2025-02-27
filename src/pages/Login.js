@@ -24,7 +24,7 @@ const Login = () => {
             const data = await response.json();
             if (response.ok) {
                 login(data.token);
-                navigate("/Homeuser"); // ✅ เปลี่ยนเส้นทางไปหน้า HomeUser
+                navigate("/Products"); // ✅ เปลี่ยนเส้นทางไปหน้า HomeUser
             } else {
                 setError(data.message);
             }
